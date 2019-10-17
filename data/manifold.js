@@ -74,7 +74,7 @@ const burrowDown = {
     },
     {
         id: 'poorly-timed-nap',
-        descripton: 'To the Windows, to the Walls, Till You Feel Like Taking a Nap.',
+        description: 'To the Windows, to the Walls, Till You Feel Like Taking a Nap.',
         result: 'Oops, something wen\'t wrong. A large hole opens up in the glowing checkered floor, and you droop into it.',
         retentionFactor: -1,
     }],

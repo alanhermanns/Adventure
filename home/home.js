@@ -13,17 +13,15 @@ let player = getUser();
 
 if (!player){
     makeForm();
-const form = document.querySelector('form');
-console.log(form);
-form.addEventListener('submit', (event) => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
         let formData = new FormData(form);
         const name = formData.get('name');
-        console.log(name);
         makeUser(name);
         form.classList.add('hidden');
         const lowerSpace = document.createElement('p');
-        lowerSpace.textContent = 'Name:' + ' ' + JSON.stringify(name);
+        lowerSpace.textContent = 'Name:' + ' ' + JSON.stringify(name) + '. ' + 'You\'re on flat ground';
         document.body.appendChild(lowerSpace);
 
     });
