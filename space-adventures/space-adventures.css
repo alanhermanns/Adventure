@@ -3,10 +3,8 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: hotpink;
 }
-/* .background {
-    
-} */
 
 h1 {
     font-family: impact;
@@ -15,4 +13,11 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+p {
+    font-family: Impact;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px, 2px, 3px black;
 }

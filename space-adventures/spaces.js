@@ -40,6 +40,9 @@ for (let i = 0; i < radiOs.length; i++){
         let results = document.createElement('p');
         results.textContent = manifold.choices[i].result; 
         document.body.appendChild(results);
-
+        choicesList.classList.add('hidden');
     });
 }
+
+const bodyBackgroundImage = manifold.backgroundImage;
+document.body.style = 'background-image: url(' + bodyBackgroundImage + ')';
