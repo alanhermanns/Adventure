@@ -61,9 +61,15 @@ for (let i = 0; i < radiOs.length; i++){
         makeUserStatsInNavBar(user);
         let newManifolds = [];
         for (let d = 0; d < manifolds.length; d++){
-            if (manifold.time === manifolds[d].time){
+            if (manifold.time === manifolds[d].time && manifold.id !== manifolds[d].id){
                 newManifolds.push(manifolds[d]);
             }
+        }
+        if (user.retentionfactor !== 0){
+            let homeLink = document.createElement('a');
+            homeLink.href = '../home/index.html';
+            homeLink.textContent = 'Return to a flat plane, home.';
+            document.body.appendChild(homeLink);
         }
         renderLinks(newManifolds);
         if (user.retentionFactor <= 0) {
