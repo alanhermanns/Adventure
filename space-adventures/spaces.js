@@ -4,6 +4,12 @@ import { makeUserStatsInNavBar } from './utils.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 let user = getUser();
+if (!user){
+    setTimeout(() => {
+        alert('ERROR: GO ENTER YOUR ACTUAL NAME');
+        window.location = '../home/index.html';
+    }, 1000);
+}
 makeUserStatsInNavBar(user);
 
 const manifoldId = searchParams.get('id');
