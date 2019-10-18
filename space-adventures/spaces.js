@@ -1,12 +1,13 @@
 import manifolds from '../data/manifold.js';
 import { getUser } from '../data/makeandtakeuser.js';
 import { makeUserStatsInNavBar } from './utils.js';
+import { renderLinks } from '../home/utils.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 let user = getUser();
 if (!user){
     setTimeout(() => {
-        alert('ERROR: GO ENTER YOUR ACTUAL NAME');
+        alert('ERROR: GO ENTER YOUR ACTUAL NAME; YOU CANT ENTER THE GAME WITHOUT A NAME, THATS A FACT.');
         window.location = '../home/index.html';
     }, 1000);
 }
@@ -54,7 +55,17 @@ for (let i = 0; i < radiOs.length; i++){
         choicesList.classList.add('hidden');
         localStorage.setItem('USER', JSON.stringify(user));
         user = getUser();
+        let previousStats = document.body.querySelector('h2');
+        document.body.removeChild(previousStats);
+        //debugger;
         makeUserStatsInNavBar(user);
+        let newManifolds = [];
+        for (let d = 0; d < manifolds.length; d++){
+            if (manifold.time === manifolds[d].time){
+                newManifolds.push(manifolds[d]);
+            }
+        }
+        renderLinks(newManifolds);
         if (user.retentionFactor <= 0) {
             setTimeout(() => {
                 window.location = '../final-dest/index.html';
