@@ -1,6 +1,10 @@
 import manifolds from '../data/manifold.js';
+import { getUser } from '../data/makeandtakeuser.js';
+import { makeUserStatsInNavBar } from './utils.js';
 
 const searchParams = new URLSearchParams(window.location.search);
+let user = getUser();
+makeUserStatsInNavBar(user);
 
 const manifoldId = searchParams.get('id');
 //const backgroundImage = searchParams.backgroundImage;
@@ -40,9 +44,19 @@ for (let i = 0; i < radiOs.length; i++){
         let results = document.createElement('p');
         results.textContent = manifold.choices[i].result; 
         document.body.appendChild(results);
+        user.retentionFactor = user.retentionFactor + manifold.choices[i].retentionFactor;
         choicesList.classList.add('hidden');
+        localStorage.setItem('USER', JSON.stringify(user));
+        user = getUser();
+        makeUserStatsInNavBar(user);
+        if (user.retentionFactor <= 0) {
+            setTimeout(() => {
+                window.location = '../final-dest/index.html';
+            }, 2000);
+        }
     });
 }
-
 const bodyBackgroundImage = manifold.backgroundImage;
 document.body.style = 'background-image: url(' + bodyBackgroundImage + ')';
+
+

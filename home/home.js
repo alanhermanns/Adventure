@@ -23,12 +23,11 @@ if (!player){
         const lowerSpace = document.createElement('p');
         lowerSpace.textContent = 'Name:' + ' ' + JSON.stringify(name) + '. ' + 'You\'re on flat ground';
         document.body.appendChild(lowerSpace);
+        player = getUser();
 
     });
 }
 renderLinks(manifolds);
-
-
 
 
 

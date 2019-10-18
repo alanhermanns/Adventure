@@ -21,3 +21,9 @@ p {
     font-size: 24px;
     text-shadow: 2px, 2px, 3px black;
 }
+.user-stats {
+    display: flex;
+    justify-content: flex-start;
+    color: lightgoldenrodyellow;
+    width: 100%;
+}
