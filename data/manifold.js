@@ -40,7 +40,7 @@ const dementionlessDescreteStatic = {
     choices: [{
         id: 'coalese',
         description: 'Coalesce',
-        result: 'In an attempt to rectify guilt destroys your memory and you fragment into millions of dots burbling it the mire of a dark oblivion.',
+        result: 'In an attempt to rectify your current position guilt destroys your memory and you fragment into millions of dots burbling it the mire of a dark oblivion.',
         retentionFactor: -3,
     },
     {
